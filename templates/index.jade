@@ -47,18 +47,6 @@ html(lang="en")
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
-      console.log('user ID: ' + response.id);
-      console.log(response);
-      var fql_query = "SELECT pic FROM user and uid="+user_id;
-        
-            FB.api({
-                method: 'fql.query',
-                query: fql_query
-            },
-            function(response){
-              console.log(response[0]); 
-            }
-            );
       });
       }
     img src="http://graph.facebook.com/" + response.id + "/picture"
