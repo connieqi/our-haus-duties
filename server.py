@@ -11,6 +11,7 @@ app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
 def index():
 	obj = {
 		"title": "CHELSEACASSIEMOLLYCONNIEAWESOMEANDCASSIESSISTER",
+		"molly": "Hi I'm Molly"
 		"text": "Now go hack!"
 	};
 	return render_template('index.jade', **obj)
