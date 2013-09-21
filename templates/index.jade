@@ -53,7 +53,7 @@ html(lang="en")
         var HausUser = Parse.Object.extend("HausUser");
         var user = new HausUser();
         user.set("name", response.name);
-        user.set("user-id", response.id);
+        user.set("userid", response.id);
         user.set("house", 0)
         user.save(null, {
         success: function(user){
