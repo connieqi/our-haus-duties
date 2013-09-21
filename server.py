@@ -14,13 +14,6 @@ def index():
 	};
 	return render_template('index.jade', **obj)
 
-@app.route('/select')
-def index():
-	obj = {
-		"title": "Select Friends",
-	};
-	return render_template('select.jade', **obj)
-
 # this guy handles static files
 @app.route('/<path:filename>')
 def send_pic(filename):
