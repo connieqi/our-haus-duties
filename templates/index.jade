@@ -46,6 +46,17 @@ html(lang="en")
       ref.parentNode.insertBefore(js, ref);
       }(document));
 
+      Parse.Cloud.beforeSave(Parse.User, function(request, response) {
+        var newACL = new Parse.ACL();
+
+        newACL.setPublicReadAccess(false);
+        newACL.setRoleWriteAccess("Administrator", true);
+        newACL.setRoleReadAccess("Administrator",  true);
+
+        request.object.setACL(newACL);
+        response.success();
+      });
+
       function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
@@ -54,6 +65,7 @@ html(lang="en")
         var user = new User();
         user.set("name", response.name);
         user.set("user-id", response.id);
+        user.set("house", 0)
         user.save(null, {
         success: function(user){
           console.log('New user ' + user.name + ' created!');
