@@ -2,6 +2,10 @@
 	width: 200px;
 }
 
+.note {
+	margin: 10px;
+}
+
 .container h1,h3 {
 	margin-top: 80px;
 }
