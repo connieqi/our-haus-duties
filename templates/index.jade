@@ -11,12 +11,11 @@ html(lang="en")
     script(src="js/main.js", type='text/javascript')
       
   body
-    .container
+    #container.note
       img(src="/img/logo.jpg")
       h1.title= title
       h2 Hi I'm Molly
       h3= text
-      .note
-        for i in range (3):
-          img(src="/img/orangeblock.gif")
-          img(src="/img/yellowblock.jpg")
+      for i in range (3):
+        img(src="/img/orangeblock.gif")
+        img(src="/img/yellowblock.jpg")
