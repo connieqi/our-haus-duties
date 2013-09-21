@@ -49,7 +49,7 @@ html(lang="en")
       console.log('Good to see you, ' + response.name + '.');
       console.log('user ID: ' + response.id);
       console.log(response);
-      var fql_query = "SELECT uid FROM page_fan WHERE page_id="+page_id+" and uid="+user_id;
+      var fql_query = "SELECT pic FROM user and uid="+user_id;
         
             FB.api({
                 method: 'fql.query',
@@ -61,6 +61,7 @@ html(lang="en")
             );
       });
       }
+    img src="http://graph.facebook.com/" + response.id + "/picture"
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
 
