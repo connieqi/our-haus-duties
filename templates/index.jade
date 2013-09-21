@@ -57,7 +57,7 @@ html(lang="en")
         user.set("house", 0)
         user.save(null, {
         success: function(user){
-          console.log('New user ' + user.name + ' created!');
+          console.log('New user ' + user.get("name") + ' created!');
         },
         error: function(user, error){
           console.log('ERROR');
