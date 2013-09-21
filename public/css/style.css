@@ -2,9 +2,10 @@
 	width: 200px;
 }
 
-#note {
+.note {
 	padding-right:50px;
 	padding-left:50px;
+	background-color: #FFFFFF;
 }
 
 .container h1,h3 {
