@@ -20,7 +20,7 @@ html(lang="en")
     script
       Parse.initialize("z6P8IOkO4St5TOQirnnjYKrTDe8kkT8Do9QH9ctI", "8rzgUjXdikempNizygTr0Qde54VgbY7ebcBS7nWX");
       window.fbAsyncInit = function() {
-      FB.init({
+      Parse.FacebookUtils.init({
       appId      : '725077970852368', 
       channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
       status     : true, 
@@ -28,13 +28,13 @@ html(lang="en")
       xfbml      : true  
       });
      
-      FB.Event.subscribe('auth.authResponseChange', function(response) {
+      Parse.FacebookUtils.Event.subscribe('auth.authResponseChange', function(response) {
         if (response.status === 'connected') {
           testAPI();
         } else if (response.status === 'not_authorized') {
-          FB.login();
+          Parse.FacebookUtils.login();
         } else {
-          FB.login();
+          Parse.FacebookUtils.login();
         }
       });
       };
@@ -46,20 +46,9 @@ html(lang="en")
       ref.parentNode.insertBefore(js, ref);
       }(document));
 
-      Parse.Cloud.beforeSave(Parse.User, function(request, response) {
-        var newACL = new Parse.ACL();
-
-        newACL.setPublicReadAccess(false);
-        newACL.setRoleWriteAccess("Administrator", true);
-        newACL.setRoleReadAccess("Administrator",  true);
-
-        request.object.setACL(newACL);
-        response.success();
-      });
-
       function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
+      Parse.FacebookUtils.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
         var User = Parse.Object.extend("User");
         var user = new User();
