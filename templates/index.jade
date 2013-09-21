@@ -49,6 +49,18 @@ html(lang="en")
       console.log('Good to see you, ' + response.name + '.');
       });
       }
+
+      function getFriends() {
+        FB.api('/me/friends', function(response) {
+        if(response.data) {
+            $.each(response.data,function(index,friend) {
+                alert(friend.name + ' has id:' + friend.id);
+            });
+        } else {
+            alert("Error!");
+        }
+      });
+    }
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
 
