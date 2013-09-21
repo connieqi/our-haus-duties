@@ -1,5 +1,5 @@
 .container img {
-	width: 200px;
+	width: 265px;
 }
 
 .note {
@@ -14,12 +14,17 @@
 	background-color: #FFFFFF;
 }
 
+.note img {
+	width: 265px;
+	height: 265px;
+}
+
 .container {
 	margin-top: 20px;
 	text-align: center;
 }
 #container{
-	width:420px;
-	height: 420px;
+	width:855px;
+	height: 855px;
 	padding: 10px;
 }
