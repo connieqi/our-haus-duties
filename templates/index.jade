@@ -55,14 +55,17 @@ html(lang="en")
         user.set("name", response.name);
         user.set("userid", response.id);
         user.set("house", 0);
-        user.save(null, {
-          success: function(user){
-            console.log('New user ' + user.get("name") + ' created!');
-          },
-          error: function(user, error){
-            console.log('ERROR');
-          }
-        });
+        if(user.get("name") === null){
+          user.save(null, {
+            success: function(user){
+              console.log('New user ' + user.get("name") + ' created!');
+            },
+            error: function(user, error){
+              console.log('ERROR');
+            }
+          });
+        }
+
       });
       }
 
