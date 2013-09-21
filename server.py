@@ -17,7 +17,7 @@ def index():
 @app.route('/select')
 def index():
 	obj = {
-		"title": "Home Sweet Haus",
+		"title": "Select Friends",
 	};
 	return render_template('select.jade', **obj)
 
