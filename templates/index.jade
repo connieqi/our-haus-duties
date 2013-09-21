@@ -55,13 +55,9 @@ html(lang="en")
         user.set("name", response.name);
         user.set("userid", response.id);
         user.set("house", 0);
-
-        var query = new Parse.Query(HausUser);
-        query.get("xWMyZ4YEGZ", {
-          success: function(user) {
-          },
-          error: function(object, error) {
-            user.save(null, {
+        console.log(user.get("name"));
+        if(user.get("name") === null){
+          user.save(null, {
             success: function(user){
               console.log('New user ' + user.get("name") + ' created!');
             },
@@ -69,9 +65,8 @@ html(lang="en")
               console.log('ERROR');
             }
           });
-          }
-        });
-          
+        }
+
       });
       }
 
