@@ -3,13 +3,15 @@
 }
 
 .note {
-	padding-right:50px;
-	padding-left:50px;
-	background-color: #FFFFFF;
-}
+	
 
 .container h1,h3 {
 	margin-top: 80px;
+}
+
+.container.note {
+	padding: 10px;
+	background-color: #FFFFFF;
 }
 
 .container {
