@@ -19,20 +19,21 @@ html(lang="en")
     script
       window.fbAsyncInit = function() {
       FB.init({
-      appId      : '725077970852368', // App ID
-      channelUrl : '/templates/channel.html', // Channel File
-      status     : true, // check login status
-      cookie     : true, // enable cookies to allow the server to access the session
-      xfbml      : true  // parse XFBML
+      appId      : '725077970852368', 
+      channelUrl : '/templates/channel.html', 
+      status     : true, 
+      cookie     : true, 
+      xfbml      : true  
       });
      
       FB.Event.subscribe('auth.authResponseChange', function(response) {
-      testAPI();
-      } else if (response.status === 'not_authorized') {
-        FB.login();
-      } else {
-        FB.login();
-      }
+        if (response.status === 'connected') {
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          FB.login();
+        } else {
+          FB.login();
+        }
       });
       };
       (function(d){
