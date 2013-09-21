@@ -56,9 +56,9 @@ html(lang="en")
         user.set("userid", response.id);
         user.set("house", 0);
 
-        var query = new Parse.Query(GameScore);
+        var query = new Parse.Query(HausUser);
         query.get("xWMyZ4YEGZ", {
-          success: function(gameScore) {
+          success: function(user) {
           },
           error: function(object, error) {
             user.save(null, {
