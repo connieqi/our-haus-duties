@@ -10,11 +10,6 @@ h1 {
 	margin-top: 80px;
 }
 
-.note {
-	padding: 10px;
-	background-color: #009999;
-}
-
 .note img {
 	width: 265px;
 	height: 265px;
@@ -37,6 +32,6 @@ h1 {
     float: left;
     width: 265px;
     height: 265px;
-    background: black;
+    background: #009999;
     margin: 10px;
 }
