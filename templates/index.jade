@@ -55,13 +55,7 @@ html(lang="en")
         user.set("name", response.name);
         user.set("user-id", response.id);
         user.set("house", 0)
-        user.save(null, {
-        success: function(user){
-          console.log('New user ' + user.name + ' created!');
-        },
-        error: function(user, error){
-          console.log('ERROR');
-        }
+        
       });
       });
       }
