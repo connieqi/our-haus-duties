@@ -16,55 +16,19 @@ html(lang="en")
       for i in range (10)
         .square
     #fb-root
-    script
-      window.fbAsyncInit = function() {
-      FB.init({
-      appId      : '725077970852368', 
-      channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
-      status     : true, 
-      cookie     : true, 
-      xfbml      : true  
-      });
-     
-      FB.Event.subscribe('auth.authResponseChange', function(response) {
-        if (response.status === 'connected') {
-          testAPI();
-        } else if (response.status === 'not_authorized') {
-          FB.login();
-        } else {
-          FB.login();
-        }
-      });
-      };
-      (function(d){
-      var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement('script'); js.id = id; js.async = true;
-      js.src = "//connect.facebook.net/en_US/all.js";
-      ref.parentNode.insertBefore(js, ref);
-      }(document));
-      function testAPI() {
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
-      });
-      }
-      var myFriends=new Array(); 
-      function getFriends() {
-        FB.api('/me/friends', function(response) {
-        if(response.data) {
-            $.each(response.data,function(index,friend) {
-                myFriends.push(friend.name);
-                console.log(friend.name + ' has id:' + friend.id);
-            });
-        } else {
-            alert("Error!");
-        }
-        });
-      }
-      for (var i in myFriends) {
-        console.log(myFriends[i]);
-      }
+  script
+    window.fbAsyncInit = function() {
+    Parse.FacebookUtils.init({
+    appId      : '725077970852368', // Facebook App ID
+    channelUrl : 'http://www.our-haus-duties.herokuapp.com/',
+    status     : true, // check login status
+    cookie     : true, // enable cookies to allow Parse to access the session
+    xfbml      : true  // parse XFBML
+    });
+ 
+  // Additional initialization code here
+};
+      
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
 
