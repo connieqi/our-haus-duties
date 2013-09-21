@@ -17,5 +17,8 @@ html(lang="en")
       h2 Hi I'm Molly
       h3= text
       .container
-        for i in range (3):
+        for i in range (6):
+        if(i%2==0):
           img.note(src="/img/orangeblock.gif")
+        else
+          img.note(src="/img/yellowblock.jpg")
