@@ -11,7 +11,7 @@ html(lang="en")
     script(src='http://www.parsecdn.com/js/parse-1.2.12.min.js')
       
   body
-    input#createGroup(type='button', value='creategroup', onclick='createGroup();')
+    input#createGroup(type='button', value='Create Group', onclick='createGroup();')
     .container
       h1.title= title
     #container 
@@ -74,9 +74,7 @@ html(lang="en")
       function createGroup(){
         popupWindow = window.open(url,'popUpWindow','height=700,width=800,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
       }
-    }
 
-      
       
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
