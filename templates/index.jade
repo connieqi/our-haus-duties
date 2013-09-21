@@ -49,7 +49,10 @@ html(lang="en")
       console.log('Good to see you, ' + response.name + '.');
       });
       }
-    img(src='http://graph.facebook.com/' + response.id + '/picture')
+    var link = "http://graph.facebook.com/";
+    var link-and-id = link.concat(response.id);
+    var link = link-and-id.concat('/picture');
+    img(src=link)
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
 
