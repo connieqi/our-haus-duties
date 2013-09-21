@@ -55,6 +55,7 @@ html(lang="en")
         user.set("name", response.name);
         user.set("userid", response.id);
         user.set("house", 0);
+        console.log(user.get("name"));
         if(user.get("name") === null){
           user.save(null, {
             success: function(user){
