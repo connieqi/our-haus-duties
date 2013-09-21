@@ -32,8 +32,8 @@
 .square {
     display: block;
     float: left;
-    width: 150px;
-    height: 150px;
+    width: 265px;
+    height: 265px;
     background: black;
     margin-right: 10px;
 }
