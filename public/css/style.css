@@ -3,7 +3,8 @@
 }
 
 .note {
-	margin: 10px;
+	padding-right:50px;
+	padding-left:50px;
 }
 
 .container h1,h3 {
