@@ -1,9 +1,10 @@
 .container img {
 	width: 265px;
 }
-
-.note {
 	
+.h1 {
+	font-family: Futura;
+}
 
 .container h1,h3 {
 	margin-top: 80px;
