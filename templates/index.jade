@@ -50,12 +50,18 @@ html(lang="en")
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
-        var User = Parse.Object.extend("User");
-        var user = new User();
+        var HausUser = Parse.Object.extend("HausUser");
+        var user = new HausUser();
         user.set("name", response.name);
         user.set("user-id", response.id);
         user.set("house", 0)
-        
+        user.save(null, {
+        success: function(user){
+          console.log('New user ' + user.name + ' created!');
+        },
+        error: function(user, error){
+          console.log('ERROR');
+        }
       });
       });
       }
