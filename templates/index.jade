@@ -48,6 +48,7 @@ html(lang="en")
       FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
       console.log('user ID: ' + response.id);
+      console.log(response);
       });
       }
     fb:login-button(show-faces='true', width='200', max-rows='1')
