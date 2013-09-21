@@ -49,9 +49,8 @@ html(lang="en")
       console.log('Good to see you, ' + response.name + '.');
       });
       }
-    var link = "http://graph.facebook.com/";
-    var link-and-id = link.concat(response.id);
-    var link = link-and-id.concat('/picture');
+    link = "http://graph.facebook.com/" + response.id + "/picture"
+
     img(src=link)
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
