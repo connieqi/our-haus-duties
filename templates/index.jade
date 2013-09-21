@@ -20,7 +20,7 @@ html(lang="en")
     script
       Parse.initialize("z6P8IOkO4St5TOQirnnjYKrTDe8kkT8Do9QH9ctI", "8rzgUjXdikempNizygTr0Qde54VgbY7ebcBS7nWX");
       window.fbAsyncInit = function() {
-      Parse.FacebookUtils.init({
+      FB.init({
       appId      : '725077970852368', 
       channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
       status     : true, 
@@ -28,13 +28,13 @@ html(lang="en")
       xfbml      : true  
       });
      
-      Parse.FacebookUtils.Event.subscribe('auth.authResponseChange', function(response) {
+      FB.Event.subscribe('auth.authResponseChange', function(response) {
         if (response.status === 'connected') {
           testAPI();
         } else if (response.status === 'not_authorized') {
-          Parse.FacebookUtils.login();
+          FB.login();
         } else {
-          Parse.FacebookUtils.login();
+          FB.login();
         }
       });
       };
@@ -48,7 +48,7 @@ html(lang="en")
 
       function testAPI() {
       console.log('Welcome!  Fetching your information.... ');
-      Parse.FacebookUtils.api('/me', function(response) {
+      FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
         var User = Parse.Object.extend("User");
         var user = new User();
