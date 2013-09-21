@@ -49,11 +49,12 @@ html(lang="en")
       console.log('Good to see you, ' + response.name + '.');
       });
       }
-
+      var myFriends=new Array(); 
       function getFriends() {
         FB.api('/me/friends', function(response) {
         if(response.data) {
             $.each(response.data,function(index,friend) {
+                myFriends.push(friend.name);
                 console.log(friend.name + ' has id:' + friend.id);
             });
         } else {
@@ -61,7 +62,9 @@ html(lang="en")
         }
         });
       }
-      console.log(response);
+      for (var i in myFriends) {
+        console.log(myFriends[i]);
+      }
     fb:login-button(show-faces='true', width='200', max-rows='1')
 
 
