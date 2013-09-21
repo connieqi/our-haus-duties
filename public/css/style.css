@@ -9,7 +9,7 @@
 	margin-top: 80px;
 }
 
-.container.note {
+.note {
 	padding: 10px;
 	background-color: #FFFFFF;
 }
@@ -17,4 +17,9 @@
 .container {
 	margin-top: 20px;
 	text-align: center;
+}
+#container{
+	width:420px;
+	height: 420px;
+	padding: 10px;
 }
