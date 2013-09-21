@@ -54,7 +54,7 @@ html(lang="en")
         var user = new HausUser();
         user.set("name", response.name);
         user.set("userid", response.id);
-        user.set("house", 0)
+        user.set("house", 0);
         user.save(null, {
           success: function(user){
             console.log('New user ' + user.get("name") + ' created!');
@@ -62,8 +62,7 @@ html(lang="en")
           error: function(user, error){
             console.log('ERROR');
           }
-        }
-      });
+        });
       });
       }
 
