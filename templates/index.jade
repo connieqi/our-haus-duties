@@ -49,6 +49,15 @@ html(lang="en")
       console.log('Good to see you, ' + response.name + '.');
       console.log('user ID: ' + response.id);
       console.log(response);
+      FB.api(
+        {
+            method: 'fql.query',
+            query: 'SELECT pic FROM user WHERE uid = ' + response.id
+        },
+        function(data) {
+          console(data)
+        }
+);
       });
       }
     fb:login-button(show-faces='true', width='200', max-rows='1')
