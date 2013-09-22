@@ -16,6 +16,8 @@ html(lang="en")
     link(rel='stylesheet', media='screen and (min-width: 701px)', href='medium.css')
     
     script
+      Parse.initialize("z6P8IOkO4St5TOQirnnjYKrTDe8kkT8Do9QH9ctI", "8rzgUjXdikempNizygTr0Qde54VgbY7ebcBS7nWX");
+      var Chore = Parse.Object.extend("Chore");
       $(document).ready(function (){
       $("#navmenu").click(function (){
       $('html, body').animate({
@@ -23,6 +25,55 @@ html(lang="en")
       }, 2000);
       });
       });
+
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '725077970852368', 
+      channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
+      status     : true, 
+      cookie     : true, 
+      xfbml      : true  
+      });
+     
+      FB.Event.subscribe('auth.authResponseChange', function(response) {
+        if (response.status === 'connected') {
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          FB.login();
+        } else {
+          FB.login();
+        }
+      });
+      };
+
+      (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+      }(document));
+
+      function testAPI() {
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {
+        console.log('Good to see you, ' + response.name + '.');
+        var HausUser = Parse.Object.extend("HausUser");
+        var user = new HausUser();
+        user.set("name", response.name);
+        user.set("userid", response.id);
+        user.set("house", 0);
+          user.save(null, {
+            success: function(user){
+              console.log('New user ' + user.get("name") + ' created!');
+            },
+            error: function(user, error){
+              console.log('ERROR');
+            }
+          });
+
+      });
+      }
 
       function saveChore(){
         var chore_name = $('#choreName').val();
@@ -73,7 +124,7 @@ html(lang="en")
           img(src="/img/HSHChore.png")
         #userContainer
           img(src="/img/HSHhousemates.png")
-       #enterContainer
+        #enterContainer
           #addChoreScreen
             form(method='post')
               | Chore:
@@ -97,71 +148,10 @@ html(lang="en")
                 a(href='javascript:saveChore();') Save Chore
     
     #fb-root
-    script
-      Parse.initialize("z6P8IOkO4St5TOQirnnjYKrTDe8kkT8Do9QH9ctI", "8rzgUjXdikempNizygTr0Qde54VgbY7ebcBS7nWX");
-      window.fbAsyncInit = function() {
-      FB.init({
-      appId      : '725077970852368', 
-      channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
-      status     : true, 
-      cookie     : true, 
-      xfbml      : true  
-      });
-     
-      FB.Event.subscribe('auth.authResponseChange', function(response) {
-        if (response.status === 'connected') {
-          testAPI();
-        } else if (response.status === 'not_authorized') {
-          FB.login();
-        } else {
-          FB.login();
-        }
-      });
-      };
+      
+      
 
-      (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-      }(document));
-
-      function testAPI() {
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
-        var HausUser = Parse.Object.extend("HausUser");
-        var user = new HausUser();
-        user.set("name", response.name);
-        user.set("userid", response.id);
-        user.set("house", 0);
-          user.save(null, {
-            success: function(user){
-              console.log('New user ' + user.get("name") + ' created!');
-            },
-            error: function(user, error){
-              console.log('ERROR');
-            }
-          });
-
-      });
-      }
-
-      function getTasks(){
-        var Chores = new Array();
-        var Chore = Parse.Object.extend("Chore");
-        var query = new Parse.Query(Chore);
-        query.equalTo("user_id", "");
-        query.first({
-          success: function(object) {
-            Chores.push(object);
-          },
-          error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-          }
-        });
-      }
+  
 
 
 
