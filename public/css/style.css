@@ -39,6 +39,10 @@ body {
 	background-color: green;
 }
 
+#fbContainer {
+	z-index: 2;
+}
+
 .insideContainer{
 	position: relative;
 	width: 911px;
@@ -54,10 +58,6 @@ body {
 	background-color: #FFCC99;
 	z-index: 1;
 	
-}
-
-fb {
-	z-index: 2;
 }
 
 #logo{
