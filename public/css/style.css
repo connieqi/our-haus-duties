@@ -100,8 +100,6 @@ body {
 #saveChoreButton {
 	width: 250px;
 	height: 250px;
-	color: #9F7A4C;
-	background-color:#9ACD8E;
 }
 #addChoreScreen{
 	color: #9F7A4C;
@@ -109,4 +107,5 @@ body {
 	height: 300px;
 	padding: 20px;
 	font-size: 20px;
+    text-decoration:none;
 }
