@@ -26,7 +26,8 @@ body {
 	margin: auto;
 	width: 950px;
 	height:1600px;
-	background-color: red;
+	background-color: #CC00FF
+;
 }
 #noteContainer{
 	height: 375px;
