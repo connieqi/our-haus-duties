@@ -133,6 +133,9 @@ html(lang="en")
               | Chore:
               input#choreName(type='text', name='choreName')
               br
+              | Due date:
+              input#datepicker(type='text')
+              br
               | Description:
               textarea#desc(rows='4', cols='34')
               br
@@ -143,9 +146,6 @@ html(lang="en")
                 option(value='2') Chelsea
                 option(value='3') Molly
                 option(value='4') Cassie
-              br
-              | Due date:
-              input#datepicker(type='text')
               br
               #saveChoreButton
                 a(href='javascript:saveChore();') Save Chore
