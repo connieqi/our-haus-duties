@@ -93,18 +93,9 @@ body {
 	z-index: 2;
 }
 
-#addChoreButton {
-	width: 50px;
-	height: 50px;
-	background: #FF3333;
-	color: #FFFFFF;
-	text-decoration: none;
-}
 #saveChoreButton {
-	width: 50px;
-	height: 50px;
-	background: #33ADD6;
-	color: #FFFFFF;
+	width: 250px;
+	height: 250px;
 	text-decoration: none;
 }
 #addChoreScreen{
