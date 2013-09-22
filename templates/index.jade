@@ -56,6 +56,7 @@ html(lang="en")
           for i in range (10)
             #square
         #choreContainer 
+        #enterContainer
     
     #fb-root
     script
@@ -110,6 +111,21 @@ html(lang="en")
         }
 
       });
+      }
+
+      function getTasks(){
+        var Chores = new Array();
+        var Chore = Parse.Object.extend("Chore");
+        var query = new Parse.Query(Chore);
+        query.equalTo("user_id", "");
+        query.first({
+          success: function(object) {
+            Chores.push(object);
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
       }
 
 

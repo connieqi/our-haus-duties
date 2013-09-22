@@ -38,6 +38,11 @@ body {
 	margin-top: 70px;
 	background-color: green;
 }
+#enterContainer{
+	height: 375px;
+	margin-top: 70px;
+	background-color: green;
+}
 
 #fbContainer {
 	position: absolute;
