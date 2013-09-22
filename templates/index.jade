@@ -79,6 +79,7 @@ html(lang="en")
       }
 
       function saveChore(){
+        alert('chore addin');
         var chore_name = $('#choreName').val();
         var desc = $('#desc').val();
         var user_id = $('#userId').val();
@@ -96,6 +97,7 @@ html(lang="en")
       });
 
       function fillUnassignedChores(){
+          alert('query');
           var query = new Parse.Query(Chore);
           query.equalTo("user_id", "0");
           alert('filling');
