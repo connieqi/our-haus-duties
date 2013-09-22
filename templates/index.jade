@@ -79,7 +79,6 @@ html(lang="en")
       }
 
       function saveChore(){
-        alert('chore addin');
         var chore_name = $('#choreName').val();
         var desc = $('#desc').val();
         var user_id = $('#userId').val();
@@ -87,7 +86,6 @@ html(lang="en")
         var c = new Chore();
         c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
           success: function(object) {
-            alert('chore added');
           }
         });
       }
@@ -117,7 +115,7 @@ html(lang="en")
           });
       }
       
-  body
+  body(onload='fillUnassignedChores()')
     #fbContainer
       fb:login-button(show-faces='true', width='200', max-rows='1')
     #fullScreenBlock
