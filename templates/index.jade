@@ -58,13 +58,13 @@ html(lang="en")
         #choreContainer 
         #enterContainer
           #addChoreScreen
-            | Chore:
+            Chore:
             input#choreName(type='text', name='choreName')
             br
-            | Description
+            Description
             textarea#desc(rows='4', cols='34')
             br
-            | User:
+            User:
             select#userId
             option(value='') None
             option(value='1') Connie
@@ -72,7 +72,7 @@ html(lang="en")
             option(value='3') Molly
             option(value='4') Cassie
             br
-            | Due date:
+            Due date:
             input#datepicker(type='text')
             br
             #saveChoreButton
