@@ -103,7 +103,7 @@ html(lang="en")
               console.log(object);
               for(var i = 0; i < object.length; ++i){
                 var a = object[i].attributes;
-                var s = $('<div class="square"><h3>'+a.name+'</h3><br/>'+a.description+'<br/>Due: '+a.due+'</div>');
+                var s = $('<div class="square"><span style="font-size:25px">'+a.name+'</span><br/><br/>'+a.description+'<br/>Due: '+a.due+'</div>');
                 $('#noteContainer').append(s);
               }
             },
