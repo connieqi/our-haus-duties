@@ -130,13 +130,13 @@ html(lang="en")
           img(src="/img/HSHhousemates.png")
         #enterContainer
           #addChoreScreen
-              h3 Chore:
+              | Chore:
               input#choreName(type='text', name='choreName')
               br
-              h3 Description:
+              | Description:
               textarea#desc(rows='4', cols='34')
               br
-              h3 User:
+              | User:
               select#userId
                 option(value='0') None
                 option(value='1') Connie
@@ -144,7 +144,7 @@ html(lang="en")
                 option(value='3') Molly
                 option(value='4') Cassie
               br
-              h3 Due date:
+              | Due date:
               //input#datepicker(type='text')
               br
               #saveChoreButton
