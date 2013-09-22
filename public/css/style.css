@@ -1,3 +1,12 @@
+.square {
+    display: block;
+    float: left;
+    width: 265px;
+    height: 265px;
+    background: #009999;
+    margin: 10px;
+}
+
 @font-face
 {
 font-family: "ARCANE_Regular";
@@ -72,40 +81,3 @@ body {
 	z-index: 1;
 }
 
-.container img {
-	width: 265px;
-}
-	
-h1 {
-	font-family: "Times New Roman", Times, serif;
-}
-
-.container h1,h3 {
-	margin-top: 80px;
-}
-
-.note img {
-	width: 265px;
-	height: 265px;
-}
-
-.container {
-	margin-top: 20px;
-	text-align: center;
-}
-#container{
-	position: absolute;
-	margin: auto;
-	width:1140;
-	height: 1140px;
-	padding: 10px;
-}
-
-.square {
-    display: block;
-    float: left;
-    width: 265px;
-    height: 265px;
-    background: #009999;
-    margin: 10px;
-}
