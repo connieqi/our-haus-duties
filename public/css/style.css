@@ -33,15 +33,17 @@ body {
 	margin-top: 92px;
 	background-color: gray;
 }
-#choreContainer{
-	height: 375px;
-	margin-top: 70px;
-	background-color: green;
-}
+
 #enterContainer{
 	height: 375px;
 	margin-top: 70px;
 	background-color: green;
+}
+
+#choreContainer{
+	height: 762px;
+	width: 899px;
+	margin-top: 70px; 
 }
 
 #fbContainer {
