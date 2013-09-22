@@ -40,6 +40,9 @@ body {
 }
 
 #fbContainer {
+	position: absolute;
+	top: 10px;
+	left: 10px;
 	z-index: 2;
 }
 
@@ -67,4 +70,26 @@ body {
 	width: 474px;
 	height: 422px;
 	z-index: 2;
+}
+
+#addChoreButton {
+	width: 50px;
+	height: 50px;
+	background: #FF3333;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#saveChoreButton {
+	width: 50px;
+	height: 50px;
+	background: #33ADD6;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#addChoreScreen{
+	display: none;
+	width: 300px;
+	height: 300px;
+	background: #FF3333;
+	color: #FFFFFF;
 }
