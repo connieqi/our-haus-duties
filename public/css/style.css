@@ -97,4 +97,5 @@ body {
 	height: 300px;
 	background: #FF3333;
 	color: #FFFFFF;
+	z-index: 3;
 }
