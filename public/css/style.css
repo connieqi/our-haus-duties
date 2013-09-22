@@ -34,7 +34,7 @@ body {
 	margin: auto;
 	height: 375px;
 	margin-top: 92px;
-	background-color: gray;
+	background-color: white;
 }
 
 #enterContainer{
@@ -42,7 +42,7 @@ body {
 	width: 910px;
 	margin: auto;
 	margin-top: 70px;
-	background-color: green;
+	background-color: white;
 }
 
 #choreContainer{
