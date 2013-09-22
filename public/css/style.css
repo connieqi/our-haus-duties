@@ -26,8 +26,7 @@ body {
 	margin: auto;
 	width: 950px;
 	height:1600px;
-	background-color: #CC00FF
-;
+	background-color: #CC00FF;
 }
 #noteContainer{
 	height: 375px;
@@ -53,9 +52,14 @@ body {
 	width: 100%;
 	height: 220px;
 	background-color: #FFCC99;
-	z-index: -1;
+	z-index: 1;
 	
 }
+
+fb {
+	z-index: 2;
+}
+
 #logo{
 	position: relative;
 	top: 0px;
