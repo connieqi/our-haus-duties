@@ -7,11 +7,9 @@ html(lang="en")
     
     // js
     link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css')
-    script(src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
-    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js", type='text/javascript')
     script(src='http://code.jquery.com/jquery-1.9.1.min.js')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-    script(src="js/main.js", type='text/javascript')
+  script(src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
+    script(src='js/main.js', type='text/javascript')
     script(src='http://www.parsecdn.com/js/parse-1.2.12.min.js')
     link(rel='stylesheet', media='screen and (min-width: 701px)', href='medium.css')
     
@@ -24,27 +22,40 @@ html(lang="en")
       });
       });
 
-      function addChore(){
-        $('#addChoreScreen').show();
-      }
-
       function saveChore(){
         var chore_name = $('#choreName').val();
         var desc = $('#desc').val();
         var user_id = $('#userId').val();
         var due_date = $('#datepicker').val();
-        var Chore = Parse.Object.extend("Chore");
         var c = new Chore();
         c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
           success: function(object) {
-            alert("Chore saved");
           }
         });
-        $('#addChoreScreen').hide();
       }
+
       $(function() {
-        $("#datepicker").datepicker();
+          $("#datepicker").datepicker();
       });
+
+      function fillUnassignedChores(){
+          var query = new Parse.Query(Chore);
+          query.equalTo("user_id", "0");
+          query.find({
+            success: function(object) {
+              console.log(object);
+              for(var i = 0; i < object.length; ++i){
+                var a = object[i].attributes;
+                var s = $('<div class="square">'+a.name+'<br/>'+a.description+'<br/>Due: '+a.due+'</div>');
+                $('#noteContainer').append(s);
+              }
+            },
+            error: function(error) {
+              console.log("error");
+              alert("Error: " + error.code + " " + error.message);
+            }
+          });
+      }
       
   body
     #fbContainer
