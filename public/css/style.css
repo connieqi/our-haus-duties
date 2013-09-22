@@ -1,8 +1,8 @@
 .square {
     display: block;
     float: left;
-    width: 165px;
-    height: 165px;
+    width: 160px;
+    height: 160px;
     background: #009999;
     margin: 10px;
 }
@@ -74,11 +74,3 @@ body {
 	z-index: 2;
 	opacity: 0.4;
 }
-#poop{
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	background-color: black;
-	z-index: 1;
-}
-
