@@ -46,6 +46,12 @@ body {
 	margin-top: 70px; 
 }
 
+#userContainer{
+	height: 400px;
+	width: 899px;
+	margin-top: 10px;
+}
+
 #fbContainer {
 	position: absolute;
 	top: 10px;
