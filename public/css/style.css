@@ -65,6 +65,7 @@ body {
 	z-index: 2;
 }
 #navmenu{
+	margin: auto;
 	position: fixed;
 	top: 239px;
 	width:100%; 
