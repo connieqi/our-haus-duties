@@ -98,7 +98,6 @@ html(lang="en")
       function fillUnassignedChores(){
           var query = new Parse.Query(Chore);
           query.equalTo("user_id", "0");
-          alert('filling');
           query.find({
             success: function(object) {
               console.log(object);
