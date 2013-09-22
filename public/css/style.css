@@ -48,14 +48,12 @@ body {
 }
 
 #choreContainer{
-	height: 762px;
 	width: 899px;
 	margin: auto;
 	margin-top: 70px; 
 }
 
 #userContainer{
-	height: 400px;
 	width: 899px;
 	margin: auto;
 	margin-top: 70px;
