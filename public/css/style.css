@@ -7,7 +7,7 @@
    	color:white;
    	padding: 10px;
    	font-size: 15px;
-   	font-family: "Arial, Helvetica, sans-serif";
+	font-family: "Arial Narrow", Arial, sans-serif;
    	text-align: left;
 }
 
@@ -17,11 +17,11 @@
 
 @font-face
 {
-font-family: "Arial, Helvetica, sans-serif";
+	font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 body {
-	font-family: "Arial, Helvetica, sans-serif";
+	font-family: "Arial Narrow", Arial, sans-serif;
 	background-image:url("/img/HSHwallpaper.png");
 	margin:0;
 	padding:0;
