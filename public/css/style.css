@@ -60,8 +60,8 @@ body {
 	position: relative;
 	top: 28px;
 	margin: auto;
-	width: 645px;
-	height: 211px;
+	width: 211px;
+	height: 188px;
 	background-color: blue;
 	z-index: 2;
 }
