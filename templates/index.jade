@@ -82,17 +82,18 @@ html(lang="en")
         var chore_name = $('#choreName').val();
         var desc = $('#desc').val();
         var user_id = $('#userId').val();
-        //var due_date = $('#datepicker').val();
+        var due_date = $('#datepicker').val();
         var c = new Chore();
-        c.save({name: chore_name, description: desc, user_id: user_id, due: ""}, {
+        c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
           success: function(object) {
+            location.reload();
           }
         });
       }
 
-      // $(function() {
-      //     $("#datepicker").datepicker();
-      // });
+      $(function() {
+        $("#datepicker").datepicker();
+      });
 
       function fillUnassignedChores(){
           var query = new Parse.Query(Chore);
@@ -145,7 +146,7 @@ html(lang="en")
                 option(value='4') Cassie
               br
               | Due date:
-              //input#datepicker(type='text')
+              input#datepicker(type='text')
               br
               #saveChoreButton
                 a(href='javascript:saveChore();') Save Chore
