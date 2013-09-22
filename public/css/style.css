@@ -1,8 +1,8 @@
 .square {
     display: block;
     float: left;
-    width: 265px;
-    height: 265px;
+    width: 165px;
+    height: 165px;
     background: #009999;
     margin: 10px;
 }
