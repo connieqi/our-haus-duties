@@ -49,7 +49,7 @@ body {
 }
 #fullScreenBlock{
 	position: absolute;
-	top: 64px;
+	top: 0px;
 	width: 100%;
 	height: 220px;
 	background-color: #FFCC99;
