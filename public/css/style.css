@@ -52,7 +52,7 @@ body {
 	top: 64px;
 	width: 100%;
 	height: 220px;
-	background-color: black;
+	background-color: #FFCC99;
 	z-index: 1;
 	
 }
@@ -62,6 +62,5 @@ body {
 	margin: auto;
 	width: 211px;
 	height: 188px;
-	background-color: blue;
 	z-index: 2;
 }
