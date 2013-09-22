@@ -95,7 +95,6 @@ html(lang="en")
       });
 
       function fillUnassignedChores(){
-          alert('query');
           var query = new Parse.Query(Chore);
           query.equalTo("user_id", "0");
           alert('filling');
