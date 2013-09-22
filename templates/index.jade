@@ -82,7 +82,7 @@ html(lang="en")
         var c = new Chore();
         c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
           success: function(object) {
-            location.reload();
+            window.location="http://our-haus-duties.herokuapp.com/";
           }
         });
       }
