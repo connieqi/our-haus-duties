@@ -36,14 +36,11 @@ body {
 	background-color: #FAA460;
 }
 #noteContainer{
-	padding: 20px;
 	text-align: center;
 	width: 899px;
 	margin: auto;
 	margin-top: 0px;
 	margin-bottom: 70px;
-	background-color: white;
-
 }
 
 #enterContainer{
