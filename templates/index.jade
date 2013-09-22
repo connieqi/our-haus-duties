@@ -86,6 +86,7 @@ html(lang="en")
         var c = new Chore();
         c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
           success: function(object) {
+            alert('chore added');
           }
         });
       }
@@ -97,6 +98,7 @@ html(lang="en")
       function fillUnassignedChores(){
           var query = new Parse.Query(Chore);
           query.equalTo("user_id", "0");
+          alert('filling');
           query.find({
             success: function(object) {
               console.log(object);
