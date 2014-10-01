@@ -9,10 +9,13 @@ app.jinja_env.add_extension('pyjade.ext.jinja.PyJadeExtension')
 
 @app.route('/')
 def index():
-	obj = {
-		"title": "Home Sweet Haus",
+	options = {
+		'title': 'Home Sweet Haus',
+		'fb_appid': os.environ['FB_APPID'],
+		'parse_appid': os.environ['PARSE_APPID'],
+		'parse_jskey': os.environ['PARSE_JSKEY']
 	};
-	return render_template('index.jade', **obj)
+	return render_template('index.jade', **options)
 
 # this guy handles static files
 @app.route('/<path:filename>')
