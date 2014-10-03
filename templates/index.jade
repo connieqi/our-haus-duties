@@ -18,7 +18,7 @@ html(lang="en")
       var parse_jskey = $('#parse_jskey').val();
       console.log(fb_appid);
       console.log(parse_appid);
-      console.log(parse_jskey)l
+      console.log(parse_jskey);
       
       Parse.initialize(parse_appid, parse_jskey);
       var Chore = Parse.Object.extend("Chore");
@@ -43,7 +43,7 @@ html(lang="en")
           } else {
             FB.login();
           }
-      });
+        });
       };
 
       (function(d){
