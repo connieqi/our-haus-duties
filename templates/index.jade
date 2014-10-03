@@ -6,7 +6,6 @@ html(lang="en")
     link(rel="stylesheet", href="/css/style.css")
     link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css')
 
-    
     // js
     script(src='js/main.js', type='text/javascript')
     script(src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
@@ -14,29 +13,33 @@ html(lang="en")
     script(src='http://www.parsecdn.com/js/parse-1.2.12.min.js')
     
     script
-      Parse.initialize("z6P8IOkO4St5TOQirnnjYKrTDe8kkT8Do9QH9ctI", "8rzgUjXdikempNizygTr0Qde54VgbY7ebcBS7nWX");
+      var fb_appid = $('#fb_appid').val();
+      var parse_appid = $('#parse_appid').val();
+      var parse_jskey = $('#parse_jskey').val();
+      
+      Parse.initialize(parse_appid, parse_jskey);
       var Chore = Parse.Object.extend("Chore");
       $(document).ready(function (){
-      $(this).scrollTop(0);      
+        $(this).scrollTop(0);      
       });
 
       window.fbAsyncInit = function() {
-      FB.init({
-      appId      : '725077970852368', 
-      channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
-      status     : true, 
-      cookie     : true, 
-      xfbml      : true  
-      });
+        FB.init({
+        appId      : fb_appid, 
+        channelUrl : 'http://www.our-haus-duties.herokuapp.com/', 
+        status     : true, 
+        cookie     : true, 
+        xfbml      : true  
+        });
      
-      FB.Event.subscribe('auth.authResponseChange', function(response) {
-        if (response.status === 'connected') {
-          testAPI();
-        } else if (response.status === 'not_authorized') {
-          FB.login();
-        } else {
-          FB.login();
-        }
+        FB.Event.subscribe('auth.authResponseChange', function(response) {
+          if (response.status === 'connected') {
+            testAPI();
+          } else if (response.status === 'not_authorized') {
+            FB.login();
+          } else {
+            FB.login();
+          }
       });
       };
 
@@ -49,22 +52,22 @@ html(lang="en")
       }(document));
 
       function testAPI() {
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-        console.log('Good to see you, ' + response.name + '.');
-        var HausUser = Parse.Object.extend("HausUser");
-        var user = new HausUser();
-        user.set("name", response.name);
-        user.set("userid", response.id);
-        user.set("house", 0);
-          user.save(null, {
-            success: function(user){
-              console.log('New user ' + user.get("name") + ' created!');
-            },
-            error: function(user, error){
-              console.log('ERROR');
-            }
-          });
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+          console.log('Good to see you, ' + response.name + '.');
+          var HausUser = Parse.Object.extend("HausUser");
+          var user = new HausUser();
+          user.set("name", response.name);
+          user.set("userid", response.id);
+          user.set("house", 0);
+            user.save(null, {
+              success: function(user){
+                console.log('New user ' + user.get("name") + ' created!');
+              },
+              error: function(user, error){
+                console.log('ERROR');
+              }
+            });
 
       });
       }
@@ -106,6 +109,9 @@ html(lang="en")
       }
       
   body(onload='fillUnassignedChores()')
+    input#fb_appid(type='hidden', value=fb_appid)
+    input#parse_appid(type='hidden', value=parse_appid)
+    input#parse_jskey(type='hidden', value=parse_jskey)
     #fbContainer
       fb:login-button(show-faces='true', width='200', max-rows='1')
     #fullScreenBlock
