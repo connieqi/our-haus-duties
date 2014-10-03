@@ -45,6 +45,10 @@ html(lang="en")
           success: function(object) {
             window.location="http://our-haus-duties.herokuapp.com/";
           }
+          error: function(error) {
+            console.log("error");
+            alert("Error: " + error.code + " " + error.message);
+          }
         });
       }
 
