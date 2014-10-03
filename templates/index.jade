@@ -35,6 +35,19 @@ html(lang="en")
         });
       }
 
+      function saveChore(){
+        var chore_name = $('#choreName').val();
+        var desc = $('#desc').val();
+        var user_id = $('#userId').val();
+        var due_date = $('#datepicker').val();
+        var c = new Chore();
+        c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
+          success: function(object) {
+            window.location="http://our-haus-duties.herokuapp.com/";
+          }
+        });
+      }
+
       $(function() {
         $("#datepicker").datepicker();
       });
@@ -88,19 +101,6 @@ html(lang="en")
               FB.login();
             }
           });
-
-          function saveChore(){
-            var chore_name = $('#choreName').val();
-            var desc = $('#desc').val();
-            var user_id = $('#userId').val();
-            var due_date = $('#datepicker').val();
-            var c = new Chore();
-            c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
-              success: function(object) {
-                window.location="http://our-haus-duties.herokuapp.com/";
-              }
-            });
-          }
         };
 
         (function(d){
