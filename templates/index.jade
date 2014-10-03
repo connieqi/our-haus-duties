@@ -14,7 +14,7 @@ html(lang="en")
     
     script
       var Chore;
-      
+
       function testAPI() {
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me', function(response) {
@@ -32,19 +32,6 @@ html(lang="en")
                 console.log('ERROR');
               }
             });
-        });
-      }
-
-      function saveChore(){
-        var chore_name = $('#choreName').val();
-        var desc = $('#desc').val();
-        var user_id = $('#userId').val();
-        var due_date = $('#datepicker').val();
-        var c = new Chore();
-        c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
-          success: function(object) {
-            window.location="http://our-haus-duties.herokuapp.com/";
-          }
         });
       }
 
@@ -81,7 +68,7 @@ html(lang="en")
         
         Parse.initialize(parse_appid, parse_jskey);
         Chore = Parse.Object.extend("Chore");
-        $(this).scrollTop(0);      
+        $(this).scrollTop(0);
 
         window.fbAsyncInit = function() {
           FB.init({
@@ -101,6 +88,19 @@ html(lang="en")
               FB.login();
             }
           });
+
+          function saveChore(){
+            var chore_name = $('#choreName').val();
+            var desc = $('#desc').val();
+            var user_id = $('#userId').val();
+            var due_date = $('#datepicker').val();
+            var c = new Chore();
+            c.save({name: chore_name, description: desc, user_id: user_id, due: due_date}, {
+              success: function(object) {
+                window.location="http://our-haus-duties.herokuapp.com/";
+              }
+            });
+          }
         };
 
         (function(d){
