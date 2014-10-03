@@ -16,6 +16,9 @@ html(lang="en")
       var fb_appid = $('#fb_appid').val();
       var parse_appid = $('#parse_appid').val();
       var parse_jskey = $('#parse_jskey').val();
+      console.log(fb_appid);
+      console.log(parse_appid);
+      console.log(parse_jskey)l
       
       Parse.initialize(parse_appid, parse_jskey);
       var Chore = Parse.Object.extend("Chore");
